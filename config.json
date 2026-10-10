@@ -1,8 +1,8 @@
 {
-  "test_mode": true,
+  "test_mode": false,
   "max_applications_per_day": 5,
   "min_match_score": 80,
-  "user_email": "gowtamidevarenti@gmail.com",
+  "user_email": "gowtamiamarnath@gmail.com",
   "search_locations": ["Göteborg", "Gothenburg", "Remote"],
   "search_keywords": [
     "Python",
