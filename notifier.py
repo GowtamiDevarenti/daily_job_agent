@@ -15,7 +15,7 @@ def send_email(to_email, subject, text_body, html_body=None, attachment_path=Non
 
     if not user_email or not app_password or app_password in ["your_gmail_app_password_here", "paste_your_16_character_app_password_here"]:
         print(f"\n[NOTICE: Simulation Mode] Gmail App Password not configured yet.")
-        print(f"Target: {to_email} | Subject: {subject}")
+        print(f"Target: {to_email} | Subject: {subject.encode('ascii', 'ignore').decode()}")
         print(f"Saving cover letter and HTML report locally...")
         return False
 
@@ -191,5 +191,5 @@ def send_daily_summary(sent_apps, manual_jobs, config):
     text_body = f"Daily Job Agent Report - {today_str}\nDirect Sent: {len(sent_apps)}\nManual Links: {len(manual_jobs)}\nCheck reports folder for HTML digest."
 
     # 4. Attempt Sending Email
-    subject = f"🇸🇪 Daily Job Agent Digest - {today_str} ({len(sent_apps)} Sent, {len(manual_jobs)} Manual)"
+    subject = f"Daily Job Agent Digest - {today_str} ({len(sent_apps)} Sent, {len(manual_jobs)} Manual)"
     send_email(user_email, subject, text_body, html_body=html_body, config=config)

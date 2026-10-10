@@ -1,0 +1,957 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; color: #333; margin:0; padding:20px; }
+        .container { max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 25px; text-align: center; }
+        .header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+        .header p { margin: 5px 0 0 0; opacity: 0.9; font-size: 14px; }
+        .stats { display: flex; background: #eef2f5; padding: 15px; border-bottom: 1px solid #e1e8ed; }
+        .stat-box { flex: 1; text-align: center; }
+        .stat-num { font-size: 22px; font-weight: bold; color: #1e3c72; }
+        .stat-label { font-size: 11px; text-transform: uppercase; color: #666; font-weight: 600; }
+        .section { padding: 20px; border-bottom: 1px solid #f0f0f0; }
+        .section-title { font-size: 18px; color: #1e3c72; border-bottom: 2px solid #1e3c72; padding-bottom: 6px; margin-top: 0; }
+        .job-card { background: #fafbfc; border: 1px solid #e1e8ed; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+        .job-header { display: flex; justify-content: space-between; align-items: center; }
+        .job-title { font-size: 16px; font-weight: bold; color: #2c3e50; margin: 0; }
+        .company { font-size: 14px; color: #7f8c8d; font-weight: 500; margin: 2px 0 10px 0; }
+        .badge { background: #27ae60; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+        .btn { display: inline-block; background: #2980b9; color: white; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; margin-top: 10px; }
+        .cover-box { background: #f8f9fa; border-left: 4px solid #2980b9; padding: 10px 15px; font-size: 12px; color: #444; margin-top: 10px; white-space: pre-line; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #888; background: #f9f9f9; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>🇸🇪 Daily Job Agent Digest</h1>
+          <p>Candidate: Gowtami Devarenti | 2026-10-10</p>
+        </div>
+        
+        <div class="stats">
+          <div class="stat-box">
+            <div class="stat-num">40</div>
+            <div class="stat-label">Total Jobs</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">6</div>
+            <div class="stat-label">Direct Emails</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">34</div>
+            <div class="stat-label">Manual Links</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">1. Direct Email Applications Sent (6)</h2>
+    
+            <div class="job-card">
+              <div class="job-title">Full-stack developer Poland Remote</div>
+              <div class="company">Jobylon AB</div>
+              <span class="badge">Score: 85%</span>
+              <br><a href="https://easyapply.jobs/r/lJc2gEl277ivAl4XFmaq" class="btn" target="_blank">View Job Listing</a>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">IT-konsulter & Systemutvecklare</div>
+              <div class="company">Inis Creative AB</div>
+              <span class="badge">Score: 95%</span>
+              <br><a href="https://platsbanken.arbetsformedlingen.se/lediga-jobb/jobb/31534172" class="btn" target="_blank">View Job Listing</a>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Join Our Team as a SW Engineer</div>
+              <div class="company">FPT Sverige AB</div>
+              <span class="badge">Score: 95%</span>
+              <br><a href="https://platsbanken.arbetsformedlingen.se/lediga-jobb/jobb/31576552" class="btn" target="_blank">View Job Listing</a>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">ASIC & FPGA Developer - Sr</div>
+              <div class="company">Morsera Technologies AB</div>
+              <span class="badge">Score: 95%</span>
+              <br><a href="https://platsbanken.arbetsformedlingen.se/lediga-jobb/jobb/31154111" class="btn" target="_blank">View Job Listing</a>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Data Analyst for food delivery platform</div>
+              <div class="company">Hotmat.se Sverige AB</div>
+              <span class="badge">Score: 95%</span>
+              <br><a href="https://platsbanken.arbetsformedlingen.se/lediga-jobb/jobb/31424128" class="btn" target="_blank">View Job Listing</a>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Data Engineer - Automotive</div>
+              <div class="company">CGI Sverige AB</div>
+              <span class="badge">Score: 85%</span>
+              <br><a href="https://cgi.njoyn.com/CORP/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J0726-0379&BRID=1313844&lang=1" class="btn" target="_blank">View Job Listing</a>
+            </div>
+            
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">2. Recommended Manual Applications & Draft Cover Letters (34)</h2>
+    
+            <div class="job-card">
+              <div class="job-title">Simuleringsingenjör inom kraftelektronik till företag i Göteborg</div>
+              <div class="company">Green Grit Recruitment AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://greengritrecruitment.teamtailor.com/jobs/8523905-simuleringsingenjor-inom-kraftelektronik-till-foretag-i-goteborg/applications/new?promotion=2240032-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Green Grit Recruitment AB,
+
+I am writing to express my enthusiastic interest in the Simuleringsingenjör inom kraftelektronik till företag i Göteborg position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Green Grit Recruitment AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Portfolio Analyst</div>
+              <div class="company">Myntro Collect AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://careers.myntro.se/jobs/8512689-portfolio-analyst/applications/new?promotion=2239328-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Myntro Collect AB,
+
+I am writing to express my enthusiastic interest in the Portfolio Analyst position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Myntro Collect AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Forskare</div>
+              <div class="company">Göteborgs Universitet</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://web103.reachmee.com/ext/I005/1035/main?site=6&validator=3038fcf1516ea1184a6da70a891f87da&lang=SE&rmpage=job&rmjob=41658&utm_medium=talentech_publishing&utm_source=jobtip" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Göteborgs Universitet,
+
+I am writing to express my enthusiastic interest in the Forskare position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Göteborgs Universitet.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Teknisk underrättelseanalytiker inom Cyber Threat Intelligence </div>
+              <div class="company">Maxitech AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://maxitech-se.intelliplan.net/jobb/1196/ansokningssida" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Maxitech AB,
+
+I am writing to express my enthusiastic interest in the Teknisk underrättelseanalytiker inom Cyber Threat Intelligence  position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Maxitech AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Software Engineer - Verification & Test Automation</div>
+              <div class="company">Experis AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://www.aplitrak.com/?adid=REpvcmRhLjQ2NDQ0LjEzNzY1QG1hbnBvd2VyZ3JvdXBub3JkaWNzLmFwbGl0cmFrLmNvbQ" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Experis AB,
+
+I am writing to express my enthusiastic interest in the Software Engineer - Verification & Test Automation position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Experis AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">DevOps Ingenjör</div>
+              <div class="company">Thalamus it consulting AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://jobb.thalamusit.se/jobs/7841920-devops-ingenjor/applications/new?promotion=2033041-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Thalamus it consulting AB,
+
+I am writing to express my enthusiastic interest in the DevOps Ingenjör position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Thalamus it consulting AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Software Engineer</div>
+              <div class="company">Volvo Personvagnar Aktiebolag</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://volvo-car-corporation.contactrh.com/jobs/9669/44473378" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Volvo Personvagnar Aktiebolag,
+
+I am writing to express my enthusiastic interest in the Software Engineer position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Volvo Personvagnar Aktiebolag.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Cryogenic Engineer</div>
+              <div class="company">SCALINQ AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://careers.scalinq.com/jobs/7075278-cryogenic-engineer/applications/new?promotion=1945414-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at SCALINQ AB,
+
+I am writing to express my enthusiastic interest in the Cryogenic Engineer position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to SCALINQ AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Staff Scientist in Atmospheric Optical Remote Sensing</div>
+              <div class="company">Chalmers Tekniska Högskola Aktiebolag</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://www.chalmers.se/om-chalmers/arbeta-hos-oss/lediga-tjanster/?rmpage=job&rmjob=15086&utm_medium=talentech_publishing&utm_source=jobtip" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Chalmers Tekniska Högskola Aktiebolag,
+
+I am writing to express my enthusiastic interest in the Staff Scientist in Atmospheric Optical Remote Sensing position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Chalmers Tekniska Högskola Aktiebolag.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Supporttekniker med linuxintresse</div>
+              <div class="company">Randstad AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://randstad.se/job-redirect/195c3b5d-ef84-417a-878f-7693e164471e" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Randstad AB,
+
+I am writing to express my enthusiastic interest in the Supporttekniker med linuxintresse position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Randstad AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Data Analyst</div>
+              <div class="company">Nordnet Bank AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://career.nordnetab.com/jobs/8500148-data-analyst/applications/new?promotion=2230027-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Nordnet Bank AB,
+
+I am writing to express my enthusiastic interest in the Data Analyst position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Nordnet Bank AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">AI Enablement Engineer</div>
+              <div class="company">Xensam AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://careers.xensam.com/jobs/8096505-ai-enablement-engineer/applications/new?promotion=2108396-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Xensam AB,
+
+I am writing to express my enthusiastic interest in the AI Enablement Engineer position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Xensam AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Applied AI Engineer</div>
+              <div class="company">Etraveli Group AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://etraveligroup.teamtailor.com/jobs/8496426-applied-ai-engineer" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Etraveli Group AB,
+
+I am writing to express my enthusiastic interest in the Applied AI Engineer position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Etraveli Group AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Jurist inom Immaterialrätt, AI Act & GDPR - Göteborg</div>
+              <div class="company">Nordic Investin Group Aktiebolag</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://jobs.nordicinvestin.se/jobs/8368861-jurist-inom-immaterialratt-ai-act-gdpr-goteborg/applications/new?promotion=2193174-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Nordic Investin Group Aktiebolag,
+
+I am writing to express my enthusiastic interest in the Jurist inom Immaterialrätt, AI Act & GDPR - Göteborg position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Nordic Investin Group Aktiebolag.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Technical Consultant Dynamics 365 till vårt Managed Services-team</div>
+              <div class="company">Fellowmind Sweden AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://career.fellowmind.se/jobs/8515519-technical-consultant-dynamics-365-till-vart-managed-services-team" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Fellowmind Sweden AB,
+
+I am writing to express my enthusiastic interest in the Technical Consultant Dynamics 365 till vårt Managed Services-team position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Fellowmind Sweden AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Electrical Documentation Engineer</div>
+              <div class="company">Friday Väst AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://pnty-apply.ponty-system.se/friday?id=5215&pnty_src=platsbanken" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Friday Väst AB,
+
+I am writing to express my enthusiastic interest in the Electrical Documentation Engineer position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Friday Väst AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Juniora Konsulter Technology Risk | Assurance |  Göteborg</div>
+              <div class="company">Ernst & Young Aktiebolag</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://eyglobal.yello.co/jobs/pRiXSXL44vSqgUQR8tq90g?job_board_id=c1riT--B2O-KySgYWsZO1Q" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Ernst & Young Aktiebolag,
+
+I am writing to express my enthusiastic interest in the Juniora Konsulter Technology Risk | Assurance |  Göteborg position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Ernst & Young Aktiebolag.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Genesys Cloud Developer (Remote)</div>
+              <div class="company">Jobs Europe AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://www.jobseurope.com/jobs/genesys-cloud-engineer-remote-da703aaf-8f18-43ba-9497-f3da567118c8" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Jobs Europe AB,
+
+I am writing to express my enthusiastic interest in the Genesys Cloud Developer (Remote) position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Jobs Europe AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Full-Stack Engineer, Product & Patient Experience - HealthTech</div>
+              <div class="company">Velora Health AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://karriar.velora.se/jobs/8367545-full-stack-engineer-product-patient-experience-healthtech" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Velora Health AB,
+
+I am writing to express my enthusiastic interest in the Full-Stack Engineer, Product & Patient Experience - HealthTech position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Velora Health AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Sales Director Sweden till internationellt växande bolag!</div>
+              <div class="company">Sway Sourcing Sweden Aktiebolag</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://www.swaysourcing.com/jobs/8447700-sales-director-sweden-till-internationellt-vaxande-bolag/applications/new?promotion=2212679-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Sway Sourcing Sweden Aktiebolag,
+
+I am writing to express my enthusiastic interest in the Sales Director Sweden till internationellt växande bolag! position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Sway Sourcing Sweden Aktiebolag.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Electrical & Electronics Component Owner</div>
+              <div class="company">Capgemini Engineering Sverige AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://www.capgemini.com/se-en/jobs/431205-en_US+sap_btp" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Capgemini Engineering Sverige AB,
+
+I am writing to express my enthusiastic interest in the Electrical & Electronics Component Owner position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Capgemini Engineering Sverige AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Machine Learning Engineer - Göteborg</div>
+              <div class="company">Kraftsam Rekrytering & Bemanning AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://pnty-apply.ponty-system.se/kraftsam?id=2264&pnty_src=platsbanken" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Kraftsam Rekrytering & Bemanning AB,
+
+I am writing to express my enthusiastic interest in the Machine Learning Engineer - Göteborg position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Kraftsam Rekrytering & Bemanning AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Azure-arkitekt med fokus på AI</div>
+              <div class="company">B3 Consulting Group AB (publ)</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://bli.b3.se/jobs/8397863-azure-arkitekt-med-fokus-pa-ai/applications/new?promotion=2202662-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at B3 Consulting Group AB (publ),
+
+I am writing to express my enthusiastic interest in the Azure-arkitekt med fokus på AI position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to B3 Consulting Group AB (publ).
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Qlikutvecklare till Knowit i Göteborg</div>
+              <div class="company">Knowit Aktiebolag (publ)</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://careersweden.knowit.se/jobs/8394678-qlikutvecklare-till-knowit-i-goteborg/applications/new?promotion=2201741-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Knowit Aktiebolag (publ),
+
+I am writing to express my enthusiastic interest in the Qlikutvecklare till Knowit i Göteborg position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Knowit Aktiebolag (publ).
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">AI Control Doctorate student</div>
+              <div class="company">Volvo Business Services Aktiebolag</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://career55.sapsf.eu/sfcareer/jobreqcareerpvt?jobId=35919&company=volvoinfor&st=D03D4DECA2548EB7A4D991B0E8F5A1E4C3660017" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Volvo Business Services Aktiebolag,
+
+I am writing to express my enthusiastic interest in the AI Control Doctorate student position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Volvo Business Services Aktiebolag.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Data Engineer - Göteborg</div>
+              <div class="company">Columbus Sweden AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://career.columbusglobal.com/jobs/7675807-data-engineer-goteborg/applications/new?promotion=1979841-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Columbus Sweden AB,
+
+I am writing to express my enthusiastic interest in the Data Engineer - Göteborg position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Columbus Sweden AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Data engineer, BI- utvecklare</div>
+              <div class="company">Skatteverket</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://skatteverket.varbi.com/se/what:job/jobID:964185/type:job/where:125/apply:1" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Skatteverket,
+
+I am writing to express my enthusiastic interest in the Data engineer, BI- utvecklare position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Skatteverket.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Data Engineer Motorit // Gothenburg</div>
+              <div class="company">Oddwork Sweden AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://jobb.oddwork.se/jobs/8507176-data-engineer-motorit-gothenburg/applications/new?promotion=2232593-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Oddwork Sweden AB,
+
+I am writing to express my enthusiastic interest in the Data Engineer Motorit // Gothenburg position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Oddwork Sweden AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">LIA – Account Manager inom Försäljning</div>
+              <div class="company">Consort Nordic AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://jobb.consortnordic.se/jobs/8187024-lia-account-manager-inom-forsaljning/applications/new?promotion=2139495-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Consort Nordic AB,
+
+I am writing to express my enthusiastic interest in the LIA – Account Manager inom Försäljning position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Consort Nordic AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">LIA-praktik inom lön</div>
+              <div class="company">Nilson Group AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://karriar.nilsongroup.com/jobs/8521570-lia-praktik-inom-lon/applications/new?promotion=2238291-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Nilson Group AB,
+
+I am writing to express my enthusiastic interest in the LIA-praktik inom lön position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Nilson Group AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Entry Level: Power Designer</div>
+              <div class="company">Ericsson AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://ericsson-ab.contactrh.com/jobs/9669/44478086" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Ericsson AB,
+
+I am writing to express my enthusiastic interest in the Entry Level: Power Designer position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Ericsson AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">App Developer</div>
+              <div class="company">LumenRadio AB</div>
+              <span class="badge">Match: 85%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://lumenradio.teamtailor.com/jobs/7888297-app-developer/applications/new?promotion=2163812-arbetsformedlingen" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at LumenRadio AB,
+
+I am writing to express my enthusiastic interest in the App Developer position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to LumenRadio AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">Junior Traceability Data analyst</div>
+              <div class="company">Framtiden i Sverige AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://jobb.framtiden.com/jobs/Careers/35955000198763390" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Framtiden i Sverige AB,
+
+I am writing to express my enthusiastic interest in the Junior Traceability Data analyst position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Framtiden i Sverige AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+            <div class="job-card">
+              <div class="job-title">International Trainee - Asset and Business Developer</div>
+              <div class="company">Vattenfall AB</div>
+              <span class="badge">Match: 95%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;"></p>
+              <a href="https://jobs.smartrecruiters.com/Vattenfall/744000149780113-international-trainee-asset-and-business-developer" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>
+Dear Hiring Team at Vattenfall AB,
+
+I am writing to express my enthusiastic interest in the International Trainee - Asset and Business Developer position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven business leadership experience, I am eager to contribute to your team.
+
+My background includes leading a team of 40 in real-estate sales and business development, where I developed strong problem-solving and communication skills. Currently, I am expanding my technical capabilities in Python, SQL, Git, and Machine Learning. I am based in Göteborg and hold full right to work in Sweden (EU/EEA).
+
+I am available for LIA internship and junior developer opportunities, and I am confident that my unique combination of business acumen and technical skills will bring immediate value to Vattenfall AB.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+Gowtami Devarenti
+Göteborg, Sweden
+GitHub: https://github.com/GowtamiDevarenti
+</div>
+            </div>
+            
+        </div>
+        <div class="footer">
+          <p>Daily Job Agent for Sweden • Gowtami Devarenti</p>
+        </div>
+      </div>
+    </body>
+    </html>
+    
