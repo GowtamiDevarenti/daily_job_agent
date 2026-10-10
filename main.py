@@ -1,6 +1,11 @@
 import json
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load .env file automatically if present
+load_dotenv()
+
 from logger import is_job_processed, log_job_application, load_log
 from job_fetcher import fetch_all_jobs
 from ai_agent import evaluate_and_generate_cover_letter
