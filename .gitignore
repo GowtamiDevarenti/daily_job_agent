@@ -1,0 +1,11 @@
+# Secret environment variables
+.env
+
+# Python cache & venv
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Local logs (if any temporary local logs)
+*.log

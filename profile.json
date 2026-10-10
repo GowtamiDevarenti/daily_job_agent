@@ -1,0 +1,39 @@
+{
+  "name": "Gowtami Devarenti",
+  "location": "Göteborg, Sweden",
+  "work_authorization": "Full right to work in Sweden (EU/EEA citizen / Permanent Resident)",
+  "education": {
+    "program": "Python AI/ML Developer",
+    "institution": "Lexicon IT-Proffs, Stockholm",
+    "period": "Sept 2026 – March 2027"
+  },
+  "background": {
+    "degree": "MBA in Finance",
+    "experience": "Real-estate sales and business development",
+    "leadership": "Led a team of 40"
+  },
+  "skills": [
+    "Python (basic-to-intermediate)",
+    "SQL",
+    "Git",
+    "GitHub"
+  ],
+  "languages": {
+    "English": "Professional working proficiency",
+    "Swedish": "Basic",
+    "Telugu": "Native"
+  },
+  "target_roles": [
+    "Python Developer (Junior / Trainee / LIA)",
+    "AI/ML Developer (Junior / Trainee / LIA)",
+    "Data Analyst (Junior / Trainee / LIA)",
+    "Data Engineer (Junior / Trainee / LIA)",
+    "Business / BI Analytics"
+  ],
+  "preferred_locations": [
+    "Göteborg",
+    "Remote"
+  ],
+  "start_availability": "LIA internships / Trainee roles starting late 2026 or 2027",
+  "github": "https://github.com/GowtamiDevarenti"
+}

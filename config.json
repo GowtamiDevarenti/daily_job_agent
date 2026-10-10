@@ -1,0 +1,26 @@
+{
+  "test_mode": true,
+  "max_applications_per_day": 5,
+  "min_match_score": 80,
+  "user_email": "gowtamidevarenti@gmail.com",
+  "search_locations": ["Göteborg", "Gothenburg", "Remote"],
+  "search_keywords": [
+    "Python",
+    "AI",
+    "Machine Learning",
+    "Data Analyst",
+    "Data Engineer",
+    "LIA",
+    "Junior Developer",
+    "Trainee"
+  ],
+  "never_apply_to_employers": [
+    "ExampleExcludedCompany"
+  ],
+  "never_apply_keywords": [
+    "Senior",
+    "Lead",
+    "Architect",
+    "Principal"
+  ]
+}
