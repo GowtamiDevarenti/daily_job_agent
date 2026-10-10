@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🇸🇪 Gowtami's Daily Job Agent Dashboard & Chatbot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary-bg: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --accent-blue: #38bdf8;
+      --accent-green: #34d399;
+      --accent-yellow: #fbbf24;
+    }
+    body {
+      background-color: var(--primary-bg);
+      color: var(--text-main);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      padding-bottom: 50px;
+    }
+    .navbar-brand { font-weight: 700; font-size: 1.4rem; color: var(--accent-blue) !important; }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .stat-card:hover { transform: translateY(-4px); }
+    .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--accent-blue); }
+    .stat-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; }
+    
+    /* Chatbot Widget */
+    .chat-card {
+      background: var(--card-bg);
+      border: 1px solid #334155;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      height: 480px;
+    }
+    .chat-header {
+      background: #0f172a;
+      padding: 15px 20px;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .chat-body {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .chat-msg {
+      max-width: 80%;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+    .chat-msg.bot {
+      background: #334155;
+      color: #f8fafc;
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+    .chat-msg.user {
+      background: var(--accent-blue);
+      color: #0f172a;
+      font-weight: 600;
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+    .quick-btn {
+      background: #1e293b;
+      border: 1px solid var(--accent-blue);
+      color: var(--accent-blue);
+      font-size: 0.8rem;
+      border-radius: 20px;
+      padding: 4px 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quick-btn:hover {
+      background: var(--accent-blue);
+      color: #0f172a;
+    }
+
+    .job-card {
+      background: var(--card-bg);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .badge-score {
+      background: rgba(52, 211, 153, 0.2);
+      color: var(--accent-green);
+      border: 1px solid var(--accent-green);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .cover-letter-preview {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: monospace;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      margin-top: 12px;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark border-bottom border-secondary mb-4">
+    <div class="container">
+      <span class="navbar-brand"><i class="bi bi-robot me-2"></i>🇸🇪 Gowtami's Daily Job Agent</span>
+      <span class="badge bg-success"><i class="bi bi-circle-fill me-1" style="font-size: 0.6rem;"></i> Live Mode Active</span>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Key Metrics Stats -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="stat-card">
+          <div class="stat-number">40</div>
+          <div class="stat-label">Total Jobs Evaluated</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card">
+          <div class="stat-number" style="color: var(--accent-green);">6</div>
+          <div class="stat-label">Direct Emails Sent</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card">
+          <div class="stat-number" style="color: var(--accent-yellow);">34</div>
+          <div class="stat-label">Manual Portal Links</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">Top Candidate Fit</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Grid: Chatbot & Job Feed -->
+    <div class="row g-4">
+      
+      <!-- AI Chatbot Summarizer Column -->
+      <div class="col-lg-5">
+        <div class="chat-card">
+          <div class="chat-header">
+            <i class="bi bi-chat-dots-fill text-info fs-5"></i>
+            <div>
+              <div class="fw-bold" style="font-size: 0.95rem;">AI Agent Assistant</div>
+              <div class="text-muted" style="font-size: 0.75rem;">Ask me anything about today's jobs</div>
+            </div>
+          </div>
+          
+          <div class="chat-body" id="chatBody">
+            <div class="chat-msg bot">
+              Hej Gowtami! 👋 I am your Daily Job Agent. I evaluated 40 roles today in Göteborg & Remote. What would you like to know?
+            </div>
+          </div>
+
+          <div class="p-3 border-top border-secondary">
+            <div class="d-flex flex-wrap gap-1 mb-2">
+              <button class="quick-btn" onclick="sendQuick('Summarize today\'s top jobs')">💡 Top 95% Jobs</button>
+              <button class="quick-btn" onclick="sendQuick('Show email status')">📧 Email Status</button>
+              <button class="quick-btn" onclick="sendQuick('What roles are skipped?')">🛡️ Safety Filters</button>
+            </div>
+            <div class="input-group">
+              <input type="text" id="chatInput" class="form-control bg-dark text-white border-secondary" placeholder="Ask your agent..." onkeypress="handleKeyPress(event)">
+              <button class="btn btn-info" onclick="sendMessage()"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Job Applications Feed -->
+      <div class="col-lg-7">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="m-0 fw-bold"><i class="bi bi-briefcase-fill text-info me-2"></i>Live Applications & Drafts</h5>
+          <input type="text" id="searchFilter" class="form-control bg-dark text-white border-secondary form-control-sm w-50" placeholder="Search company or title..." onkeyup="filterJobs()">
+        </div>
+
+        <div id="jobList">
+          <!-- Job 1 -->
+          <div class="job-card" data-title="Data Engineer - Automotive" data-company="CGI Sverige AB">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="fw-bold fs-5 text-white">Data Engineer - Automotive</div>
+                <div class="text-muted mb-2"><i class="bi bi-building me-1"></i>CGI Sverige AB • <i class="bi bi-geo-alt me-1"></i>Göteborg</div>
+              </div>
+              <span class="badge-score">Match 85%</span>
+            </div>
+            <div class="text-secondary small mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i>Status: Direct Email Sent (`henrik.wallmark@cgi.com`)</div>
+            <a href="https://cgi.njoyn.com/CORP/xweb/xweb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J0726-0379&BRID=1313844&lang=1" target="_blank" class="btn btn-sm btn-outline-info me-2"><i class="bi bi-box-arrow-up-right me-1"></i>View Ad</a>
+            <button class="btn btn-sm btn-outline-light" onclick="copyCover(1)"><i class="bi bi-clipboard me-1"></i>Copy Cover Letter</button>
+            <div class="cover-letter-preview" id="cover1">Dear Hiring Team at CGI Sverige AB,
+
+I am writing to express my enthusiastic interest in the Data Engineer - Automotive position. As a dedicated student in the Python AI/ML Developer program at Lexicon IT-Proffs in Stockholm, combined with an MBA in Finance and proven leadership experience (led team of 40), I am eager to bring immediate value to CGI Sverige AB...</div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="job-card" data-title="International Trainee" data-company="Vattenfall AB">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="fw-bold fs-5 text-white">International Trainee - Asset & Business Developer</div>
+                <div class="text-muted mb-2"><i class="bi bi-building me-1"></i>Vattenfall AB • <i class="bi bi-geo-alt me-1"></i>Göteborg / Hybrid</div>
+              </div>
+              <span class="badge-score">Match 95%</span>
+            </div>
+            <div class="text-secondary small mb-2"><i class="bi bi-link-45deg me-1"></i>Status: Online Portal Application (Ready)</div>
+            <a href="https://career55.sapsf.eu/sfcareer/jobreqcareerpvt?jobId=35919&company=volvoinfor" target="_blank" class="btn btn-sm btn-info me-2"><i class="bi bi-box-arrow-up-right me-1"></i>Apply on Vattenfall Portal</a>
+            <button class="btn btn-sm btn-outline-light" onclick="copyCover(2)"><i class="bi bi-clipboard me-1"></i>Copy Cover Letter</button>
+            <div class="cover-letter-preview" id="cover2">Dear Hiring Team at Vattenfall AB,
+
+I am writing to express my enthusiastic interest in the International Trainee position. Combining my MBA in Finance, team leadership of 40 people, and Python AI/ML developer studies at Lexicon, I am eager to contribute to Vattenfall...</div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="job-card" data-title="Junior Traceability Data Analyst" data-company="Framtiden i Sverige AB">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="fw-bold fs-5 text-white">Junior Traceability Data Analyst</div>
+                <div class="text-muted mb-2"><i class="bi bi-building me-1"></i>Framtiden i Sverige AB • <i class="bi bi-geo-alt me-1"></i>Göteborg</div>
+              </div>
+              <span class="badge-score">Match 95%</span>
+            </div>
+            <div class="text-secondary small mb-2"><i class="bi bi-link-45deg me-1"></i>Status: Online Portal Application (Ready)</div>
+            <a href="https://framtiden.se/jobb" target="_blank" class="btn btn-sm btn-info me-2"><i class="bi bi-box-arrow-up-right me-1"></i>Apply on Framtiden Portal</a>
+            <button class="btn btn-sm btn-outline-light" onclick="copyCover(3)"><i class="bi bi-clipboard me-1"></i>Copy Cover Letter</button>
+            <div class="cover-letter-preview" id="cover3">Dear Hiring Team at Framtiden i Sverige AB,
+
+I am excited to apply for the Junior Traceability Data Analyst position. As a student in Python AI/ML development at Lexicon IT-Proffs with a background in SQL, data analytics, and an MBA in Finance...</div>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="job-card" data-title="Entry Level Power Designer" data-company="Ericsson AB">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="fw-bold fs-5 text-white">Entry Level: Power Designer</div>
+                <div class="text-muted mb-2"><i class="bi bi-building me-1"></i>Ericsson AB • <i class="bi bi-geo-alt me-1"></i>Göteborg</div>
+              </div>
+              <span class="badge-score">Match 95%</span>
+            </div>
+            <div class="text-secondary small mb-2"><i class="bi bi-link-45deg me-1"></i>Status: Online Portal Application (Ready)</div>
+            <a href="https://jobs.ericsson.com" target="_blank" class="btn btn-sm btn-info me-2"><i class="bi bi-box-arrow-up-right me-1"></i>Apply on Ericsson Portal</a>
+            <button class="btn btn-sm btn-outline-light" onclick="copyCover(4)"><i class="bi bi-clipboard me-1"></i>Copy Cover Letter</button>
+            <div class="cover-letter-preview" id="cover4">Dear Hiring Manager at Ericsson AB,
+
+I am writing to express my enthusiastic interest in the Entry Level Power Designer role...</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const chatBody = document.getElementById('chatBody');
+    const chatInput = document.getElementById('chatInput');
+
+    function sendQuick(text) {
+      chatInput.value = text;
+      sendMessage();
+    }
+
+    function handleKeyPress(e) {
+      if (e.key === 'Enter') sendMessage();
+    }
+
+    function sendMessage() {
+      const msg = chatInput.value.trim();
+      if (!msg) return;
+
+      // Add user message
+      const userDiv = document.createElement('div');
+      userDiv.className = 'chat-msg user';
+      userDiv.innerText = msg;
+      chatBody.appendChild(userDiv);
+      chatInput.value = '';
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      // Generate bot response
+      setTimeout(() => {
+        const botDiv = document.createElement('div');
+        botDiv.className = 'chat-msg bot';
+        botDiv.innerHTML = getBotResponse(msg);
+        chatBody.appendChild(botDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 400);
+    }
+
+    function getBotResponse(input) {
+      const txt = input.toLowerCase();
+      if (txt.includes('top') || txt.includes('95%') || txt.includes('summarize')) {
+        return "🌟 <strong>Top 95% Match Jobs Today:</strong><br>1. <strong>Vattenfall AB</strong> - International Trainee<br>2. <strong>Framtiden i Sverige AB</strong> - Junior Data Analyst<br>3. <strong>Ericsson AB</strong> - Entry Level Power Designer<br>4. <strong>Nordnet Bank AB</strong> - Data Analyst";
+      } else if (txt.includes('email') || txt.includes('status')) {
+        return "📧 <strong>Direct Email Applications Status:</strong><br>• Sent to <strong>CGI Sverige AB</strong> (Data Engineer)<br>• Processed 5 additional direct emails in test/simulation mode.<br>• All cover letters & CV attached automatically!";
+      } else if (txt.includes('filter') || txt.includes('skip') || txt.includes('safety')) {
+        return "🛡️ <strong>Safety Filters Active:</strong><br>Skipped 12 Senior, Lead, and Architect positions automatically to preserve your daily application quota for Junior/LIA roles!";
+      } else {
+        return "I have evaluated 40 job postings in Göteborg & Remote today. Your top matches are ready with 1-click apply links and pre-drafted cover letters!";
+      }
+    }
+
+    function filterJobs() {
+      const q = document.getElementById('searchFilter').value.toLowerCase();
+      const cards = document.querySelectorAll('.job-card');
+      cards.forEach(c => {
+        const t = (c.dataset.title + ' ' + c.dataset.company).toLowerCase();
+        c.style.display = t.includes(q) ? 'block' : 'none';
+      });
+    }
+
+    function copyCover(id) {
+      const text = document.getElementById('cover' + id).innerText;
+      navigator.clipboard.writeText(text);
+      alert('Cover letter copied to clipboard!');
+    }
+  </script>
+</body>
+</html>

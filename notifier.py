@@ -5,9 +5,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from datetime import datetime
 
-def send_email(to_email, subject, body, attachment_path=None, config=None):
+def send_email(to_email, subject, text_body, html_body=None, attachment_path=None, config=None):
     """
-    Sends email via SMTP (Gmail). If credentials are missing or invalid, catches errors gracefully.
+    Sends multi-part (Plain Text + Rich HTML) email via SMTP.
+    Catches errors gracefully if credentials are missing.
     """
     user_email = os.getenv("MY_EMAIL", config.get("user_email") if config else "")
     app_password = os.getenv("GMAIL_APP_PASSWORD")
@@ -15,15 +16,21 @@ def send_email(to_email, subject, body, attachment_path=None, config=None):
     if not user_email or not app_password or app_password in ["your_gmail_app_password_here", "paste_your_16_character_app_password_here"]:
         print(f"\n[NOTICE: Simulation Mode] Gmail App Password not configured yet.")
         print(f"Target: {to_email} | Subject: {subject}")
-        print(f"Saving cover letter and summary to daily report file...")
+        print(f"Saving cover letter and HTML report locally...")
         return False
 
     try:
-        msg = MIMEMultipart()
+        msg = MIMEMultipart("alternative")
         msg["From"] = user_email
         msg["To"] = to_email
         msg["Subject"] = subject
-        msg.attach(MIMEText(body, "plain", "utf-8"))
+
+        # Attach Plain Text fallback
+        msg.attach(MIMEText(text_body, "plain", "utf-8"))
+
+        # Attach HTML version if provided
+        if html_body:
+            msg.attach(MIMEText(html_body, "html", "utf-8"))
 
         if attachment_path and os.path.exists(attachment_path):
             with open(attachment_path, "rb") as f:
@@ -36,7 +43,7 @@ def send_email(to_email, subject, body, attachment_path=None, config=None):
         server.login(user_email, app_password)
         server.send_message(msg)
         server.quit()
-        print(f"Successfully sent email to {to_email}")
+        print(f"Successfully sent rich HTML email to {to_email}")
         return True
     except Exception as e:
         print(f"\n[SMTP NOTICE] Gmail connection skipped ({e}). Report saved locally.")
@@ -45,12 +52,12 @@ def send_email(to_email, subject, body, attachment_path=None, config=None):
 
 def send_daily_summary(sent_apps, manual_jobs, config):
     """
-    Writes local markdown report FIRST, then attempts sending daily email summary to candidate.
+    Writes Markdown & HTML local report files, then sends rich HTML daily email digest.
     """
     today_str = datetime.now().strftime("%Y-%m-%d")
     user_email = os.getenv("MY_EMAIL", config.get("user_email"))
 
-    # 1. ALWAYS write detailed local report file first
+    # 1. ALWAYS write Markdown report
     os.makedirs("reports", exist_ok=True)
     report_filename = f"reports/daily_report_{today_str}.md"
     with open(report_filename, "w", encoding="utf-8") as f:
@@ -75,37 +82,114 @@ def send_daily_summary(sent_apps, manual_jobs, config):
         else:
             f.write("No manual application links found today.\n")
 
-    print(f"Generated daily report file: {report_filename}")
+    # 2. Build Rich HTML Body for Email & Web Report
+    html_body = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <style>
+        body {{ font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; color: #333; margin:0; padding:20px; }}
+        .container {{ max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }}
+        .header {{ background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 25px; text-align: center; }}
+        .header h1 {{ margin: 0; font-size: 24px; font-weight: 600; }}
+        .header p {{ margin: 5px 0 0 0; opacity: 0.9; font-size: 14px; }}
+        .stats {{ display: flex; background: #eef2f5; padding: 15px; border-bottom: 1px solid #e1e8ed; }}
+        .stat-box {{ flex: 1; text-align: center; }}
+        .stat-num {{ font-size: 22px; font-weight: bold; color: #1e3c72; }}
+        .stat-label {{ font-size: 11px; text-transform: uppercase; color: #666; font-weight: 600; }}
+        .section {{ padding: 20px; border-bottom: 1px solid #f0f0f0; }}
+        .section-title {{ font-size: 18px; color: #1e3c72; border-bottom: 2px solid #1e3c72; padding-bottom: 6px; margin-top: 0; }}
+        .job-card {{ background: #fafbfc; border: 1px solid #e1e8ed; border-radius: 8px; padding: 15px; margin-bottom: 15px; }}
+        .job-header {{ display: flex; justify-content: space-between; align-items: center; }}
+        .job-title {{ font-size: 16px; font-weight: bold; color: #2c3e50; margin: 0; }}
+        .company {{ font-size: 14px; color: #7f8c8d; font-weight: 500; margin: 2px 0 10px 0; }}
+        .badge {{ background: #27ae60; color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; }}
+        .btn {{ display: inline-block; background: #2980b9; color: white; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; margin-top: 10px; }}
+        .cover-box {{ background: #f8f9fa; border-left: 4px solid #2980b9; padding: 10px 15px; font-size: 12px; color: #444; margin-top: 10px; white-space: pre-line; }}
+        .footer {{ text-align: center; padding: 20px; font-size: 12px; color: #888; background: #f9f9f9; }}
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>🇸🇪 Daily Job Agent Digest</h1>
+          <p>Candidate: Gowtami Devarenti | {today_str}</p>
+        </div>
+        
+        <div class="stats">
+          <div class="stat-box">
+            <div class="stat-num">{len(sent_apps) + len(manual_jobs)}</div>
+            <div class="stat-label">Total Jobs</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">{len(sent_apps)}</div>
+            <div class="stat-label">Direct Emails</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">{len(manual_jobs)}</div>
+            <div class="stat-label">Manual Links</div>
+          </div>
+        </div>
 
-    # 2. Attempt email summary delivery
-    subject = f"Daily Job Agent Summary - {today_str} ({len(sent_apps)} Sent, {len(manual_jobs)} Manual)"
-    body = f"Hello Gowtami,\n\nHere is your Daily Job Application Agent report for {today_str}.\n\n"
-    body += "="*50 + "\n"
-    body += f"1. APPLICATIONS SENT DIRECTLY ({len(sent_apps)})\n"
-    body += "="*50 + "\n"
-    
+        <div class="section">
+          <h2 class="section-title">1. Direct Email Applications Sent ({len(sent_apps)})</h2>
+    """
+
     if sent_apps:
         for app in sent_apps:
-            body += f"• {app['title']} at {app['company']} (Score: {app['match_score']}%)\n"
-            body += f"  Status: {app['status']}\n"
-            body += f"  Link: {app['url']}\n\n"
+            html_body += f"""
+            <div class="job-card">
+              <div class="job-title">{app['title']}</div>
+              <div class="company">{app['company']}</div>
+              <span class="badge">Score: {app['match_score']}%</span>
+              <br><a href="{app['url']}" class="btn" target="_blank">View Job Listing</a>
+            </div>
+            """
     else:
-        body += "No direct email applications sent today.\n\n"
+        html_body += "<p style='color:#777;'>No direct email applications sent today.</p>"
 
-    body += "="*50 + "\n"
-    body += f"2. JOBS TO APPLY FOR YOURSELF ({len(manual_jobs)})\n"
-    body += "="*50 + "\n"
-    
+    html_body += f"""
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">2. Recommended Manual Applications & Draft Cover Letters ({len(manual_jobs)})</h2>
+    """
+
     if manual_jobs:
         for job in manual_jobs:
-            body += f"• {job['title']} at {job['company']} (Score: {job['match_score']}%)\n"
-            body += f"  Apply Link: {job['url']}\n"
-            body += f"  Summary: {job.get('summary', '')}\n"
-            body += f"  Draft Cover Letter:\n{job.get('cover_letter', '')}\n"
-            body += "-"*40 + "\n\n"
+            html_body += f"""
+            <div class="job-card">
+              <div class="job-title">{job['title']}</div>
+              <div class="company">{job['company']}</div>
+              <span class="badge">Match: {job['match_score']}%</span>
+              <p style="font-size:13px; color:#555; margin:8px 0;">{job.get('summary', '')}</p>
+              <a href="{job['url']}" class="btn" target="_blank">Apply Now on Portal</a>
+              <div class="cover-box"><strong>Draft Cover Letter:</strong>\n{job.get('cover_letter', '')}</div>
+            </div>
+            """
     else:
-        body += "No additional manual application links found today.\n\n"
+        html_body += "<p style='color:#777;'>No additional manual application links today.</p>"
 
-    body += "Keep up the great work!\nBest regards,\nYour Daily Job Agent"
+    html_body += """
+        </div>
+        <div class="footer">
+          <p>Daily Job Agent for Sweden • Gowtami Devarenti</p>
+        </div>
+      </div>
+    </body>
+    </html>
+    """
 
-    send_email(user_email, subject, body, config=config)
+    # 3. Save HTML report
+    html_report_filename = f"reports/daily_report_{today_str}.html"
+    with open(html_report_filename, "w", encoding="utf-8") as f:
+        f.write(html_body)
+    print(f"Generated HTML report file: {html_report_filename}")
+
+    # Plain text body fallback
+    text_body = f"Daily Job Agent Report - {today_str}\nDirect Sent: {len(sent_apps)}\nManual Links: {len(manual_jobs)}\nCheck reports folder for HTML digest."
+
+    # 4. Attempt Sending Email
+    subject = f"🇸🇪 Daily Job Agent Digest - {today_str} ({len(sent_apps)} Sent, {len(manual_jobs)} Manual)"
+    send_email(user_email, subject, text_body, html_body=html_body, config=config)
