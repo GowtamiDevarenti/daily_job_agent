@@ -73,10 +73,10 @@ def run_agent():
                 target_email = user_email if test_mode else contact_email
                 subject = f"{'[TEST MODE] ' if test_mode else ''}Application for {job.get('title')} - Gowtami Devarenti"
                 
-                body = f"Dear Hiring Manager,\n\n{cover_letter}\n\nAttached is my ATS-friendly CV (PDF format) for your review.\n\nBest regards,\nGowtami Devarenti\nhttps://github.com/GowtamiDevarenti"
+                body = f"Dear Hiring Manager,\n\n{cover_letter}\n\nAttached is my CV (PDF format) for your review.\n\nBest regards,\nGowtami Devarenti\nhttps://github.com/GowtamiDevarenti"
                 
-                # Attachment priority: ATS PDF Resume
-                attachment = "CV_Gowtami_Devarenti_ATS.pdf" if os.path.exists("CV_Gowtami_Devarenti_ATS.pdf") else "CV_Gowtami_Devarenti_ATS.txt"
+                # Attachment priority: Clean PDF Resume
+                attachment = "CV_Gowtami_Devarenti.pdf" if os.path.exists("CV_Gowtami_Devarenti.pdf") else "CV_Gowtami_Devarenti_ATS.txt"
                 success = send_email(target_email, subject, body, attachment_path=attachment, config=config)
 
                 status = "sent_test_email" if test_mode else "sent_employer_email"

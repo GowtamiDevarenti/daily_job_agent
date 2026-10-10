@@ -4,7 +4,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 
 def build_pdf():
-    pdf_filename = "CV_Gowtami_Devarenti_ATS.pdf"
+    pdf_filename = "CV_Gowtami_Devarenti.pdf"
     doc = SimpleDocTemplate(
         pdf_filename,
         pagesize=letter,
@@ -107,7 +107,7 @@ def build_pdf():
     story.append(Paragraph("• <b>Availability:</b> LIA Internships starting late 2026 / early 2027, Trainee & Junior roles.", bullet_style))
 
     doc.build(story)
-    print("Successfully generated CV_Gowtami_Devarenti_ATS.pdf!")
+    print("Successfully generated CV_Gowtami_Devarenti.pdf!")
 
 if __name__ == "__main__":
     build_pdf()
